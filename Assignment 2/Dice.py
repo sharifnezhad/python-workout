@@ -1,0 +1,6 @@
+import random
+dice_number=random.randint(1,6)
+print('dice number:',dice_number)
+if dice_number==6:
+    dice_number=random.randint(1,6)
+    print('Award:',dice_number)
