@@ -1,14 +1,14 @@
 import random
 
 words=['ali','rain','loremipsum','umbrmella','icecream','tosols']
-esc='exit'
-while esc!='exit':
+esc='again'
+while esc =='again':
     chooseTheWord=random.choice(words)
     selectedWord=[ '-' for i in range(len(chooseTheWord)) ]
     str=''
     print(str.join(selectedWord))
-    joon=6
-    while joon>0:
+    lives=6
+    while lives>0:
         user_letter=input('enter a letter: ')
         if user_letter.lower() in chooseTheWord:
             num=0
@@ -22,10 +22,10 @@ while esc!='exit':
             if str.join(selectedWord)==chooseTheWord: 
                 break
         else:
-            joon-=1
-            print('false and joon=' , joon)
+            lives-=1
+            print('false and lives=' , lives)
         
-    if joon==0:
+    if lives==0:
         print('game over')
     else:
         print('good job')
