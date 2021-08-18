@@ -1,6 +1,7 @@
 import os
 import time
-import qrcode
+from pyqrcode import QRCode
+import pyqrcode
 def switch():
     while True:
         os.system('cls')
@@ -10,7 +11,8 @@ def switch():
               '4-Qrcode\n'
               '5-remove product\n'
               '6-buy\n'
-              '7-exit')
+              '7-show list\n'
+              '8-exit')
         argument = int(input(' enter a number: '))
         if argument==1:
            add_product(PRODUCTS)
@@ -25,8 +27,9 @@ def switch():
         elif argument==6:
             buy_shop()
         elif argument==7:
+            show_list()
+        elif argument==8:
             save_info()
-
 def save_info():
     my_file=open('database.txt','w')
     for i in range(len(PRODUCTS)):
@@ -38,7 +41,6 @@ def save_info():
 
 
     my_file.close()
-
 def add_product(products):
     my_file=open('database.txt','a')
     
@@ -59,62 +61,55 @@ def add_product(products):
                 break
         name=input('name: ')
         my_dict['name']=name
-        price=int(input('price: '))
+        price=float(input('price: '))
         my_dict['price'] = price
         count=int(input('count: '))
         my_dict['count'] = count
         products.append(my_dict)
-        print(products)
         print('Do you want to import new goods? (y/n)')
         if input()=='n':
             break
 
     my_file.close()
 def edit_product():
-    number=0
-    id= int(input('id:'))
-    line_number=0
-    bool=False
-    for i in PRODUCTS:
-        line_number+=1
-        if id==i['id']:
-            number=i
-            bool=True
-            break
-
-    if bool==True:
-        number['name']=input('name: ')
-        number['price']=int(input('price: '))
-        number['count']=int(input('count: '))
+    found=False
+    while True:
+        number = -1
+        id= int(input('id:'))
         for i in PRODUCTS:
+            number += 1
             if id==i['id']:
-                i['name']=number['name']
-                i['price']=number['price']
-                i['count']=number['count']
+                found=True
+                break
+        if found==False:
+            print('id vojod nadarad')
+        else: break
+    print('1.name\n2.price\n3.count')
+    if int(input())==1:
+        PRODUCTS[number]['name']=input('name:')
+    elif int(input())==2:
+        PRODUCTS[number]['price'] = float('price:')
+    elif int(input())==3:
+        PRODUCTS[number]['count'] = input('count:')
 
-
-
-
-        # file=open('database.txt','r').readlines()
-        # file[line_number-1]=str(number['id'])+','+number['name']+','+str(number['price'])+','+str(number['count'])
-        # file_write=open('database.txt','w')
-        # file_write.writelines(file)
-        # file_write.close()
-
-
-    else:
-        exit()
 def search():
     name=input('name: ')
     for i in PRODUCTS:
         if name==i['name']:
-            print('Goods are available')
-        else:
-            print('The product is not available')
+          return  print('Goods are available')
+
+    return print('The product is not available')
 def qrcode_id():
     id=int(input('id: '))
-    img=qrcode.make(id)
-    img.save('id.png')
+
+    # Generate QR code
+    url = pyqrcode.create(id)
+
+    # Create and save the svg file naming "myqr.svg"
+    url.svg("myqr.svg", scale=8)
+
+    # Create and save the png file naming "myqr.png"
+    url.png('myqr.png', scale=6)
 def remove_product():
     id=int(input('id: '))
     for i in PRODUCTS:
@@ -182,6 +177,11 @@ def buy_shop():
         else:
             print('The product is not available')
     time.sleep(4)
+def show_list():
+    for i in range(len(PRODUCTS)):
+        print(PRODUCTS[i]['id'], PRODUCTS[i]['name'], PRODUCTS[i]['price'], PRODUCTS[i]['count'], end='\n')
+
+
 my_file =open('database.txt','r')
 data= my_file.read()
 my_file.close()
@@ -192,7 +192,7 @@ for i in range(len(product_list)):
     mydict={}
     mydict['id']=int(product_info[0])
     mydict['name']=product_info[1]
-    mydict['price']=int(product_info[2])
+    mydict['price']=float(product_info[2])
     mydict['count']=int(product_info[3])
     PRODUCTS.append(mydict)
 
