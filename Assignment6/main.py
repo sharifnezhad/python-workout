@@ -61,7 +61,7 @@ def add_product(products):
                 break
         name=input('name: ')
         my_dict['name']=name
-        price=float(input('price: '))
+        price=int(input('price: '))
         my_dict['price'] = price
         count=int(input('count: '))
         my_dict['count'] = count
@@ -88,7 +88,7 @@ def edit_product():
     if int(input())==1:
         PRODUCTS[number]['name']=input('name:')
     elif int(input())==2:
-        PRODUCTS[number]['price'] = float('price:')
+        PRODUCTS[number]['price'] = int('price:')
     elif int(input())==3:
         PRODUCTS[number]['count'] = input('count:')
 
@@ -192,7 +192,7 @@ for i in range(len(product_list)):
     mydict={}
     mydict['id']=int(product_info[0])
     mydict['name']=product_info[1]
-    mydict['price']=float(product_info[2])
+    mydict['price']=int(product_info[2])
     mydict['count']=int(product_info[3])
     PRODUCTS.append(mydict)
 
