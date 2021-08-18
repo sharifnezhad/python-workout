@@ -9,7 +9,7 @@ def one_player(variable,variable_com):
         while True:
             x=int(input('X: '))
             y=int(input('Y: '))
-            if x<=3 or y<=3 :
+            if x<3 and y<3 :
                 if tictactoe[x][y]=='_':
                     tictactoe[x][y]=colored(variable,'green')
                     show_game()
@@ -34,7 +34,7 @@ def two_player(variable,variable_two):
             print('player 1:')
             x=int(input('X: '))
             y=int(input('Y: '))
-            if x<=3 or y<=3 :
+            if x<3 and y<3 :
                 if tictactoe[x][y]=='_':
                     tictactoe[x][y]=colored(variable,'green')
                     show_game()
@@ -73,7 +73,7 @@ def winner(var):
 
         if num==3:
             print(var, 'barande')
-            print('{time.time() - start}')
+            print(f'{time.time() - start_time} s')
             exit()
         else:
             num=0
