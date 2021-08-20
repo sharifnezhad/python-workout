@@ -1,0 +1,11 @@
+apple,sib
+tree,drakht
+i,man
+ask,porsidan
+want,khastan
+start,shoro kardan
+this,in
+is,hast
+book,ketab
+you,to
+hand,dast
