@@ -30,8 +30,6 @@ def translate_en(word_list):
     if '. ' in sentence:
         sentence=sentence.split('.')
     verb.append(sentence.split(' '))
-
-    print(verb)
     word_str=[]
     str_words=' '
     for i in range(len(verb)):
@@ -51,8 +49,6 @@ def translate_pr(word_list):
     if '. ' in sentence:
         sentence = sentence.split('.')
     verb.append(sentence.split(' '))
-
-    print(verb)
     word_str = []
     str_words = ' '
     for i in range(len(verb)):
