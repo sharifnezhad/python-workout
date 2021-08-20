@@ -29,7 +29,10 @@ def translate_en(word_list):
     verb=[]
     if '. ' in sentence:
         sentence=sentence.split('.')
-    verb.append(sentence.split(' '))
+        for i in range(len(sentence)):
+            verb.append(sentence[i].split(' '))
+    else:
+        verb.append(sentence.split(' '))
     word_str=[]
     str_words=' '
     for i in range(len(verb)):
@@ -48,7 +51,10 @@ def translate_pr(word_list):
     verb = []
     if '. ' in sentence:
         sentence = sentence.split('.')
-    verb.append(sentence.split(' '))
+        for i in range(len(sentence)):
+            verb.append(sentence[i].split(' '))
+    else:
+        verb.append(sentence.split(' '))
     word_str = []
     str_words = ' '
     for i in range(len(verb)):
@@ -96,4 +102,3 @@ while True:
         translate_pr(WORDS)
     elif number_munu==4:
         save_words(WORDS)
-
