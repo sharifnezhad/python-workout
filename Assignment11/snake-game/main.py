@@ -28,21 +28,23 @@ class Game(arcade.View):
         if arcade.check_for_collision(self.snake,self.apple):
             self.snake.eat(0)
             self.apple=Apple(760,540)
-            self.snake.width+=3
+            self.snake.len += 3
             self.snake.draw()
+
         elif self.snake.center_x<=28 or self.snake.center_x>=770 or self.snake.center_y>=548 or self.snake.center_y<=48:
             self.window.show_view(self.gameover)
         elif arcade.check_for_collision(self.snake,self.pear):
             self.snake.eat(1)
             self.pear=Pear(760,540)
-            self.snake.width += 3
+            self.snake.len += 3
             self.snake.draw()
         elif arcade.check_for_collision(self.snake,self.poop):
             self.snake.eat(2)
+            self.snake.len -= 3
             if self.snake.score<0:
                 self.window.show_view(self.gameover)
             self.poop=Poop(760,540)
-            self.snake.width -= 3
+
             self.snake.draw()
 
 
@@ -76,9 +78,15 @@ class Snake(arcade.Sprite):
         self.color=arcade.color.WHITE
         self.speed=4
         self.score=0
+        self.body=[]
+        self.len=0
     def draw(self):
-        arcade.draw_rectangle_filled(self.center_x,self.center_y,self.width,self.height,self.color)
-
+        arcade.draw_circle_filled(self.center_x,self.center_y,8,self.color)
+        self.body.append([self.center_x,self.center_y])
+        for i in self.body:
+            arcade.draw_circle_filled(i[0], i[1], 8, self.color)
+        if len(self.body)>self.len:
+            self.body.pop(0)
     def move(self):
         self.center_x+=self.speed*self.change_x
         self.center_y+=self.speed*self.change_y
@@ -89,7 +97,6 @@ class Snake(arcade.Sprite):
             self.score += 2
         elif x==2:
             self.score-=1
-
 class Apple(arcade.Sprite):
     def __init__(self,w,h):
         super().__init__()
@@ -116,7 +123,6 @@ class Pear (arcade.Sprite):
 
     def draw(self):
         self.pear_img.draw()
-
 class Poop (arcade.Sprite):
     def __init__(self,w,h):
         super().__init__()
