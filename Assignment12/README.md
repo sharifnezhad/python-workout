@@ -1,4 +1,4 @@
-**Game Space Craft**
+**Game SpaceCraft**
 <hr>
 Game Help:
 
