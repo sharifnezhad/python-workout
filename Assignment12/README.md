@@ -12,6 +12,11 @@ Game images:
 
 ![aaa](https://github.com/sharifnezhad/python-workout/blob/main/Assignment12/images/Screenshot%202021-09-15%20170812.jpg)
 
+![aaa](https://github.com/sharifnezhad/python-workout/blob/main/Assignment12/images/Screenshot%202021-09-15%20174800.jpg)
+
 2. Step 2: Destroy the enemy command ship
 
 ![aa](https://github.com/sharifnezhad/python-workout/blob/main/Assignment12/images/Screenshot%202021-09-15%20171044.jpg)
+
+
+
