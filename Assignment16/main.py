@@ -2,7 +2,7 @@ from PySide6.QtWidgets import *
 from PySide6.QtUiTools import *
 from PySide6.QtCore import *
 import math
-import math
+
 class Helloworld(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -17,20 +17,26 @@ class Helloworld(QMainWindow):
         self.ui.btn_mn.clicked.connect(self.bt_mn)
         self.ui.btn_decimal.clicked.connect(self.decimal)
         self.ui.btn_result.clicked.connect(self.result)
-        self.ui.number1.clicked.connect(self.display_nuber)
-        self.ui.number2.clicked.connect(self.display_nuber)
-        self.ui.number3.clicked.connect(self.display_nuber)
-        self.ui.number4.clicked.connect(self.display_nuber)
-        self.ui.number5.clicked.connect(self.display_nuber)
-        self.ui.number6.clicked.connect(self.display_nuber)
-        self.ui.number7.clicked.connect(self.display_nuber)
-        self.ui.number8.clicked.connect(self.display_nuber)
-        self.ui.number9.clicked.connect(self.display_nuber)
-        self.ui.number0.clicked.connect(self.display_nuber)
-        self.ui.btn_sin.clicked.connect(self.angle)
-        self.ui.btn_cos.clicked.connect(self.angle)
-        self.ui.btn_tan.clicked.connect(self.angle)
-        self.ui.btn_cot.clicked.connect(self.angle)
+        self.number=[None for x in range(10)]
+
+        self.number[0]=self.ui.number1
+        self.number[1]=self.ui.number2
+        self.number[2]=self.ui.number3
+        self.number[3]=self.ui.number4
+        self.number[4]=self.ui.number5
+        self.number[5]=self.ui.number6
+        self.number[6]=self.ui.number7
+        self.number[7]=self.ui.number8
+        self.number[8]=self.ui.number9
+        self.number[9]=self.ui.number0
+        for i in range(10):
+            self.number[i].clicked.connect(self.display_nuber)
+            
+        self.angle_list=[self.ui.btn_sin,self.ui.btn_cos,self.ui.btn_tan,self.ui.btn_cot]
+        
+        for i in range(len(self.angle_list)):
+            self.angle_list[i].clicked.connect(self.angle)
+            
         self.ui.btn_log.clicked.connect(self.logaritm)
         self.ui.btn_sqrt.clicked.connect(lambda :self.ui.textbox.setText(str(math.sqrt(int(self.ui.textbox.text())))))
         self.ui.btn_percent.clicked.connect(self.percent)
