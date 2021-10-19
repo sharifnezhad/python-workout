@@ -53,8 +53,7 @@ class MainWindow(QMainWindow):
                         self.game[i][j].setStyleSheet('font-size:20px; color:blue')
         except:
             self.ui.message.setText('error,file not to open')
-            sleep(3)
-            exit()
+            
     def dark_mode(self):
         if self.ui.dark_mode.text()=='Dark Mode':
             self.ui.setStyleSheet('background:#2d3436')
@@ -75,8 +74,7 @@ class MainWindow(QMainWindow):
                     num+=1
         if num>=81:
             self.ui.message.setText('you win.')
-            sleep(3)
-            exit()
+            
         #check rows
         for row in range(9):
             for i in range(9):
