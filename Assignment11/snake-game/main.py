@@ -11,27 +11,31 @@ class Game(arcade.View):
         self.apple=Apple(760,540)
         self.pear=Pear(760,540)
         self.poop = Poop(760, 540)
+        self.box = Box(760, 540)
         self.gameover=Gameover(800,600,self)
+        self.i=1
+        self.number_apple=[Apple(760,540),Apple(760,540),Apple(760,540)]
     def on_draw(self):
         arcade.start_render()
         arcade.draw_rectangle_outline(400,300,750,500,arcade.color.WHEAT)
         arcade.draw_text('Score: %s'% self.snake.score,10,20,self.snake.color)
         self.snake.draw()
-        self.apple.draw()
+        for i in range(3):
+            self.number_apple[i].draw()
         self.pear.draw()
-        self.poop.draw()
+        self.box.draw()
 
     def on_update(self, delta_time: float):
         count=0
         self.snake.move()
-
-        if arcade.check_for_collision(self.snake,self.apple):
-            self.snake.eat(0)
-            self.apple=Apple(760,540)
-            self.snake.len += 3
-            self.snake.draw()
-
-        elif self.snake.center_x<=28 or self.snake.center_x>=770 or self.snake.center_y>=548 or self.snake.center_y<=48:
+        for i in range(len(self.number_apple)):
+            if arcade.check_for_collision(self.snake,self.number_apple[i]):
+                self.snake.eat(0)
+                self.number_apple[i]=Apple(760,540)
+                self.snake.len += 3
+                self.snake.draw()
+                break
+        if self.snake.center_x<=28 or self.snake.center_x>=770 or self.snake.center_y>=548 or self.snake.center_y<=48:
             self.window.show_view(self.gameover)
         elif arcade.check_for_collision(self.snake,self.pear):
             self.snake.eat(1)
@@ -46,6 +50,12 @@ class Game(arcade.View):
             self.poop=Poop(760,540)
 
             self.snake.draw()
+        elif arcade.check_for_collision(self.snake,self.box):
+            self.window.show_view(self.gameover)
+        elif len(self.snake.body)>10:
+            for i in range(1,len(self.snake.body)):
+                if arcade.check_for_collision(self.snake.body[0],self.snake.body[i]):
+                    self.window.show_view(self.gameover)
 
 
     def on_key_press(self, key, modifiers):
@@ -97,6 +107,8 @@ class Snake(arcade.Sprite):
             self.score += 2
         elif x==2:
             self.score-=1
+        elif x==3:
+            self.score+=5
 class Apple(arcade.Sprite):
     def __init__(self,w,h):
         super().__init__()
@@ -107,8 +119,11 @@ class Apple(arcade.Sprite):
         self.apple_img=arcade.Sprite('images/apple.png')
         self.apple_img.center_x=self.center_x=random.randint(30,w)
         self.apple_img.center_y=self.center_y=random.randint(50,h)
+
     def draw(self):
         self.apple_img.draw()
+
+
 class Pear (arcade.Sprite):
     def __init__(self,w,h):
         super().__init__()
@@ -119,6 +134,7 @@ class Pear (arcade.Sprite):
         self.pear_img = arcade.Sprite('images/pear.png')
         self.pear_img.center_x=self.center_x=random.randint(30,w)
         self.pear_img.center_y=self.center_y=random.randint(50,h)
+
 
 
     def draw(self):
@@ -137,6 +153,20 @@ class Poop (arcade.Sprite):
 
     def draw(self):
         self.poop_img.draw()
+class Box (arcade.Sprite):
+    def __init__(self,w,h):
+        super().__init__()
+        self.color=arcade.color.RED
+        self.width=16
+        self.height=16
+        self.r=8
+        self.box_img = arcade.Sprite('images/box.png')
+        self.box_img.center_x=self.center_x=random.randint(30,w)
+        self.box_img.center_y=self.center_y=random.randint(50,h)
+
+
+    def draw(self):
+        self.box_img.draw()
 class Gameover (arcade.View):
     def __init__(self,w,h,gameview):
         super().__init__()
