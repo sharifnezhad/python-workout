@@ -3,10 +3,6 @@ import random
 import cv2
 
 def sp_noise(image,prob):
-    '''
-    Add salt and pepper noise to image
-    prob: Probability of the noise
-    '''
     output = np.zeros(image.shape,np.uint8)
     thres = 1 - prob 
     for i in range(image.shape[0]):
@@ -20,6 +16,6 @@ def sp_noise(image,prob):
                 output[i][j] = image[i][j]
     return output
 
-image = cv2.imread('chess pieces.jpg',0) # Only for grayscale image
+image = cv2.imread('chess pieces.jpg',0)
 noise_img = sp_noise(image,0.05)
 cv2.imwrite('sp_noise.jpg', noise_img)
