@@ -8,3 +8,9 @@
 </p>
 
 This code is written in Python programming language and opencv library. It has the ability to edit any image you want
+
+# eliminate image noise
+
+![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/eliminate%20image%20noise/result.jpg)
+
+Eliminate image noise using the Python programming language
