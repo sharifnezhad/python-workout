@@ -24,3 +24,9 @@ Eliminate image noise using the Python programming language
   </p>
   
 Finding electrical board defects (Photo 2) using image processing
+
+# Create noise in the image
+
+Before the changes             |  After the changes
+:-------------------------:|:-------------------------:
+![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Create%20noise%20in%20the%20image/chess%20pieces.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Create%20noise%20in%20the%20image/sp_noise.jpg)
