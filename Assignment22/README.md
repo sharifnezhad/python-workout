@@ -14,3 +14,13 @@ This code is written in Python programming language and opencv library. It has t
 ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/eliminate%20image%20noise/result.jpg)
 
 Eliminate image noise using the Python programming language
+
+# Find faults in the electrical board
+
+<p>
+  <img src="https://raw.githubusercontent.com/sharifnezhad/python-workout/main/Assignment22/Find-faults-in-electrical%20board/board-origin.bmp" width="33%">
+  <img src="https://raw.githubusercontent.com/sharifnezhad/python-workout/main/Assignment22/Find-faults-in-electrical%20board/board-test.bmp" width="33%">
+  <img src="https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Find-faults-in-electrical%20board/result.jpg" width="33%">
+  </p>
+  
+Finding electrical board defects (Photo 2) using image processing
