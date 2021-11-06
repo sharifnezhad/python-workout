@@ -20,7 +20,7 @@ Eliminate image noise using the Python programming language
 <p>
   <img src="https://raw.githubusercontent.com/sharifnezhad/python-workout/main/Assignment22/Find-faults-in-electrical%20board/board-origin.bmp" width="33%">
   <img src="https://raw.githubusercontent.com/sharifnezhad/python-workout/main/Assignment22/Find-faults-in-electrical%20board/board-test.bmp" width="33%">
-  <img src="https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Find-faults-in-electrical%20board/result.jpg" width="33%">
+  <img src="https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Find-faults-in-electrical%20board/result2.jpg" width="33%">
   </p>
   
 Finding electrical board defects (Photo 2) using image processing
@@ -30,3 +30,19 @@ Finding electrical board defects (Photo 2) using image processing
 Before the changes             |  After the changes
 :-------------------------:|:-------------------------:
 ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Create%20noise%20in%20the%20image/chess%20pieces.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Create%20noise%20in%20the%20image/sp_noise.jpg)
+
+# Remove cars on the highway
+
+Before the changes             |  After the changes
+:-------------------------:|:-------------------------:
+![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Highway/h1.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Highway/result.jpg)
+
+# convert photos to paintings
+
+Before the changes             |  After the changes
+:-------------------------:|:-------------------------:
+![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/amir.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/paint.jpg)
+
+Before the changes             |  After the changes
+:-------------------------:|:-------------------------:
+![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/amir2.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/paint99.jpg)
