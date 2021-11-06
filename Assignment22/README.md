@@ -37,12 +37,11 @@ Before the changes             |  After the changes
 :-------------------------:|:-------------------------:
 ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Highway/h1.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Highway/result.jpg)
 
-# convert photos to paintings
 
-Before the changes             |  After the changes
-:-------------------------:|:-------------------------:
-![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/amir.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/paint.jpg)
 
-Before the changes             |  After the changes
-:-------------------------:|:-------------------------:
-![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/amir2.jpg)  |  ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/convert-photos-to-paintings/paint99.jpg)
+# Secret message
+
+<p>
+
+  <img src="https://github.com/sharifnezhad/python-workout/blob/main/Assignment22/Secret%20message/result2.jpg" width="33%">
+  </p>
