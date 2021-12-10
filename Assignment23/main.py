@@ -82,7 +82,7 @@ fps= int(cap.get(cv2.CAP_PROP_FPS))
 print("This is the fps ", fps)
 flag = 0
 font = cv2.FONT_HERSHEY_COMPLEX
-menu_text='1.emoji face\n2.emogi eyes and lip\n3.Rasterize the image\n4.Rotate the image\nESC'
+menu_text='1.emoji face\n2.emogi eyes and lip\n3.Rasterize the image\n4.Rotate the image\n5.blur image\nESC'
 y0, dy = 50, 4
 while True:
     ret,frame=cap.read()
