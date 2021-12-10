@@ -14,3 +14,7 @@
 ## Image brightness
 
 ![](https://github.com/sharifnezhad/python-workout/blob/main/Assignment23/Screenshot%202021-11-13%20222505.jpg)
+
+## Blur image
+
+<img src="https://github.com/sharifnezhad/python-workout/blob/main/Assignment23/image.png" >
